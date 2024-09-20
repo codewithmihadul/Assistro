@@ -74,13 +74,8 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if (message.includes('who created you') || message.includes('creator')) {
+    else if (message.includes('who created you')) {
         const finalText = "I am created by the team named Make a plan for our future.";
-        speech.text = finalText;
-    }
-
-    else if (message.includes('what is your age') || message.includes('how old are you')) {
-        const finalText = "I am Created on 14th August, 2024";
         speech.text = finalText;
     }
 
@@ -90,7 +85,7 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if (message.includes('what is your name')) {
+    else if (message.includes('name')) {
         const finalText = "My name is Assistro.";
         speech.text = finalText;
     }
@@ -124,18 +119,6 @@ function speakThis(message) {
         window.open(`https://www.youtube.com/results?search_query=${searchQuery}`, "_blank");
         const finalText = `Playing ${searchQuery} on YouTube.`;
         speech.text = finalText;
-    }
-
-    else if(message.includes('search for') || message.includes('what are') || message.includes('where is') || message.includes('where are')) {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what i found on internet regarding " + message;
-        speech.text = finalText;
-    }        
-        
-     else if(message.includes('what is') || message.includes('Tell me about') || message.includes('who is')) {
-        const query = message.replace("what is", "").replace("Tell me about", "").replace("who is", "").trim();
-        window.open(`https://en.wikipedia.org/wiki/${encodeURIComponent(query)}`, "_blank");
-        speech.text = Here is the Wikipedia article regarding ${query}.;
     }
 
     else if (message.includes('news') && message.includes('today')) {
