@@ -121,6 +121,18 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
+    else if(message.includes('search for') || message.includes('what are')) {
+        window.open(https://www.google.com/search?q=${message.replace(" ", "+")}, "_blank");
+        const finalText = "This is what i found on internet regarding " + message;
+        speech.text = finalText;
+    }        
+        
+     else if(message.includes('what is') || message.includes('Tell me about') || message.includes('who is')) {
+        const query = message.replace("what is", "").replace("Tell me about", "").replace("who is", "").trim();
+        window.open(`https://en.wikipedia.org/wiki/${encodeURIComponent(query)}`, "_blank");
+        speech.text = Here is the Wikipedia article regarding ${query}.;
+    }
+
     else if (message.includes('news') && message.includes('today')) {
         window.open("https://news.google.com/search?q=Bangladesh", "_blank");
         const finalText = "Here are today's latest news in Bangladesh.";
