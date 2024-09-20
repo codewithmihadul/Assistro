@@ -74,8 +74,13 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if (message.includes('who created you')) {
+    else if (message.includes('who created you') || message.includes('creator')) {
         const finalText = "I am created by the team named Make a plan for our future.";
+        speech.text = finalText;
+    }
+
+    else if (message.includes('what is your age') || message.includes('how old are you')) {
+        const finalText = "I am Created on 14th August, 2024";
         speech.text = finalText;
     }
 
@@ -121,8 +126,8 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('search for') || message.includes('what are')) {
-        window.open(https://www.google.com/search?q=${message.replace(" ", "+")}, "_blank");
+    else if(message.includes('search for') || message.includes('what are') || message.includes('where is') || message.includes('where are')) {
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
         speech.text = finalText;
     }        
